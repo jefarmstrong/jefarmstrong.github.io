@@ -3,7 +3,7 @@ permalink: /posts/:title
 
 name: Jef Armstrong
 url: http://jefarmstrong.com
-avatar_url: images/buddy_me.jpeg
+avatar_url: /images/buddy_me.jpeg
 description: My blog. 
 twitter: jefarmstrong
 github: jefarmstrong
