@@ -1,5 +1,4 @@
 ---
-published: true
 layout: post
 title:  "Building my home office"
 date:   2013-09-06 20:05:34
