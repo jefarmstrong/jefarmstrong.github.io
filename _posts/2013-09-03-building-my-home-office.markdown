@@ -34,20 +34,20 @@ Then my friend Jeff Mershon and I framed out a new ceiling, new windows and a ne
 <div style="clear:both;"/>
 
 <p>
-    <img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/sheetrock-one.jpg" width="48%" style="float:right" />
-    Once all of that was done, I put in extra insulation and we sheetrocked it all up. Another friend who is a painter did the mudding, since I'd never done that before.
+<img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/sheetrock-one.jpg" width="48%" style="float:right" />
+Once all of that was done, I put in extra insulation and we sheetrocked it all up. Another friend who is a painter did the mudding, since I'd never done that before.
 </p>
 <p>
-    I also ran a CAT6 exterior graded network cable from the house out to the shed since my wireless didn't quite reach out there. I added another wireless router in the shed for extra connectivity.
+I also ran a CAT6 exterior graded network cable from the house out to the shed since my wireless didn't quite reach out there. I added another wireless router in the shed for extra connectivity.
 </p>
 <p>
-    For painting I always wanted to do a chalkboard wall. So the long wall on the right, with no windows, became a full floor to ceiling chalkboard!
+For painting I always wanted to do a chalkboard wall. So the long wall on the right, with no windows, became a full floor to ceiling chalkboard!
 </p>
 <div style="clear:both;margin-top:15px;"/>
 
 <p>
-    <img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/exterior-one.jpg" width="48%" style="float:right" />
-    Here's the outside. All painted.
+<img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/exterior-one.jpg" width="48%" style="float:right" />
+Here's the outside. All painted.
 </p>
 <div style="clear:both;margin:15px 0;"/>
 
@@ -57,16 +57,16 @@ Here's the interior color scheme:
 
 <iframe frameborder="0" style="height: 190px; width: 190px; margin-left: 0px;" src="http://www.benjaminmoore.com/bm/colorgallery/embed_color.jsp?colorvalue=rgb%28232%2C%20223%2C%20203%29&colornum=PM-30&colorname=bone%20white&colorhref=http://www.benjaminmoore.com/en-us/paint-color/pm30" id="benjaminMooreIframe"><div style="display:none;"><a href="http://www.benjaminmoore.com/en-us/paint-color/pm30">bone white</a></div></iframe>
 
- <iframe frameborder="0" style="height: 190px; width: 190px; margin-left: 0px;" src="http://www.benjaminmoore.com/bm/colorgallery/embed_color.jsp?colorvalue=rgb%28167%2C%20187%2C%2051%29&colornum=2028-30&colorname=tequila%20lime&colorhref=http://www.benjaminmoore.com/en-us/paint-color/tequilalime" id="benjaminMooreIframe"><div style="display:none;"><a href="http://www.benjaminmoore.com/en-us/paint-color/tequilalime">tequila lime</a></div></iframe>
+<iframe frameborder="0" style="height: 190px; width: 190px; margin-left: 0px;" src="http://www.benjaminmoore.com/bm/colorgallery/embed_color.jsp?colorvalue=rgb%28167%2C%20187%2C%2051%29&colornum=2028-30&colorname=tequila%20lime&colorhref=http://www.benjaminmoore.com/en-us/paint-color/tequilalime" id="benjaminMooreIframe"><div style="display:none;"><a href="http://www.benjaminmoore.com/en-us/paint-color/tequilalime">tequila lime</a></div></iframe>
 
 
 <p style="margin-top:1.2em;">
-    <img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/post-interior-one.jpg" width="48%" style="float:right" />
-    
-    And here is the interior. It's still a work in progress. I have to put in lighting, the floor is only primed at this point, I still have to properly setup my desk with three monitors and of course, the minifridge! 
+<img src="https://dl.dropboxusercontent.com/u/113243/pics/shed/post-interior-one.jpg" width="48%" style="float:right" />
+
+And here is the interior. It's still a work in progress. I have to put in lighting, the floor is only primed at this point, I still have to properly setup my desk with three monitors and of course, the minifridge! 
 </p>
 <p>
-    As you can see, Chucho, my dog, has his spot right next to my desk. He <b>loves</b> to come to work with me and sometimes is almost impossible to get him to leave to go back to the house.
+As you can see, Chucho, my dog, has his spot right next to my desk. He <b>loves</b> to come to work with me and sometimes is almost impossible to get him to leave to go back to the house.
 </p>
 
 <div style="clear:both;"/>
