@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <title>
+    <meta charset="utf-8">
+    <title>
     {% if page.title %}
-      {{ page.title }} &ndash;
+        {{ page.title }} &ndash;
     {% endif %}
     {{ site.name }}
-  </title>
+    </title>
 
-  <meta name="author" content="{{ site.name }}" />
-  <meta name="description" content="{{ site.description }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="{{ site.name }}" />
+    <meta name="description" content="{{ site.description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+    <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
 
-  <link rel="stylesheet" href="/css/fontawesome.min.css" type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
-  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
-  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/application.js"></script>
+    <!-- <link rel="stylesheet" href="/css/pygments.css" type="text/css" /> -->
+    <!-- <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" /> -->
+    <!-- <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'> -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/application.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <section class="sidebar">
-    <a href="/">
-      <img src="{{site.url}}/{{site.avatar_url}}?s=150" height="75" width="75" class="avatar" />
-    </a>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="header-title">
+                    <a href="/" class="">
+                        <img src="{{site.avatar_url}}?s=150" class="img-circle" />
+                        <div class="h2">Jef Armstrong</div>
+                    </a>
+                </div>
+            </div>  
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="/pages/resume.html">Resume</a></li>
+                    <li><a href="/pages/blog.html">Blog</a></li>
+                    <li><a href="/pages/contact.html">Contact</a></li>
+                    <li><a href="/pages/contact.html"><i class="fa fa-envelope-o"></i></a></li>
+                    <li><a href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    
+    
+                </ul>                
+            </div>
+        </div>   
+    </nav>
+    <div class="row row-space">
+        <div class="col-sm-8 col-sm-offset-2 border-top">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+      {{ content }}
+    </div>
 
-    <section class="name">
-      <a href="/">
-        <span id="fname">{{ site.name|split:' '|first }}</span>
-        <span id="lname">{{ site.name|split:' '|last }}</span>
-      </a>
-    </section>
-
-    <section class="meta">
-      <a href="https://github.com/{{ site.github }}" target="_blank"><i class="icon icon-github"></i></a>
-      <a href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="icon icon-twitter"></i></a>
-      <a href="http://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="icon icon-linkedin"></i></a>
-    </section>
-
-    <section class="sections">
-      <ul>
-        <li><a href="/pages/resume.html" title="my resume">resume</a></li>
-        <li><a href="/">posts</a></li>
-      </ul>
-    </section>
-  </section>
-
-  {{ content }}
 </body>
-
 </html>
