@@ -48,39 +48,42 @@ categories: code
         <p>
             Here's the core loop that runs on the server. (Node.js)
         </p>
-```javascript        
-var nextState = this.openStates.shift();
-var state = this.closedSet[nextState.hash];
-if (this.isOverMoveCount(state)) {
-    return;
-}
-if (state.moveCount() !== nextState.moveCount) {
-    console.warn('closedSet state was replaced: ' + state.moveCount() + '  => ' + nextState.moveCount);
-    return;
-}
-var _this = this;
-var movable = state.currentMovableObjects();
-_.forEach(movable, function(obj) {
-    var moves = state.validMovesForObjectAtIndex(obj.index);
-    _.forEach(moves, function(move){
-        var aState = state.createByApplyingMove(move);
-        aState = _this.insertIntoClosedSet(aState);
-        if (!aState) {
-            return true;
+        <div class="highlight highlight-javascript">
+        <pre>       
+        var nextState = this.openStates.shift();
+        var state = this.closedSet[nextState.hash];
+        if (this.isOverMoveCount(state)) {
+            return;
         }
-        _this.evaluatePosition(aState);
-        if (aState.score === 0) {
-            if (aState.moveCount() < _this.bestSolutionMoves) {
-                _this.bestSolutionMoves = aState.moveCount();
-            }
-            _this.solutions.push(aState);
-        }else {
-            if (! _this.isOverMoveCount(aState)) {
-                _this.insertIntoOpenStates(aState);
-            }
+        if (state.moveCount() !== nextState.moveCount) {
+            console.warn('closedSet state was replaced: ' + state.moveCount() + '  => ' + nextState.moveCount);
+            return;
         }
-    });
-});
-```
+        var _this = this;
+        var movable = state.currentMovableObjects();
+        _.forEach(movable, function(obj) {
+            var moves = state.validMovesForObjectAtIndex(obj.index);
+            _.forEach(moves, function(move){
+                var aState = state.createByApplyingMove(move);
+                aState = _this.insertIntoClosedSet(aState);
+                if (!aState) {
+                    return true;
+                }
+                _this.evaluatePosition(aState);
+                if (aState.score === 0) {
+                    if (aState.moveCount() < _this.bestSolutionMoves) {
+                        _this.bestSolutionMoves = aState.moveCount();
+                    }
+                    _this.solutions.push(aState);
+                }else {
+                    if (! _this.isOverMoveCount(aState)) {
+                        _this.insertIntoOpenStates(aState);
+                    }
+                }
+            });
+        });
+        </pre>
+        </div>
+        
     </div>
 </div>            
