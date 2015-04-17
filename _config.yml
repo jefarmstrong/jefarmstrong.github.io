@@ -1,5 +1,6 @@
-pygments: true
-markdown: kramdown
+highlighter: pygments
+#pygments: true
+#markdown: kramdown
 permalink: /posts/:title
 
 name: Jef Armstrong

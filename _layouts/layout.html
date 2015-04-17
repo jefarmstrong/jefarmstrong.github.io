@@ -18,56 +18,55 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/pygments.css" rel="stylesheet" type="text/css">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/application.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="header-title">
-                    <a href="/" class="">
-                        <img src="{{site.avatar_url}}?s=150" class="img-circle" />
-                        <div class="h2">Jef Armstrong</div>
-                    </a>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="header-title">
+                        <a href="/" class="">
+                            <img src="{{site.avatar_url}}?s=150" class="img-circle" />
+                            <div class="h2">Jef Armstrong</div>
+                        </a>
+                    </div>
+                </div>  
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/pages/portfolio.html">Portfolio</a></li>
+                        <li><a href="/pages/resume.html">Resume</a></li>
+                        <li><a href="/pages/blog.html">Blog</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/pages/contact.html"><i class="fa fa-envelope-o"></i></a></li>
+                        <li><a href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="http://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+                    </ul>                
                 </div>
-            </div>  
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/pages/portfolio.html">Portfolio</a></li>
-                    <li><a href="/pages/resume.html">Resume</a></li>
-                    <li><a href="/pages/blog.html">Blog</a></li>
-                    <li><a href="/pages/contact.html">Contact</a></li>
-                    <li><a href="/pages/contact.html"><i class="fa fa-envelope-o"></i></a></li>
-                    <li><a href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a></li>
-                    <li><a href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="http://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-    
-    
-                </ul>                
+            </div>   
+        </nav>
+        <div class="row row-space">
+            <div class="col-sm-8 col-sm-offset-2 border-top">
+                &nbsp;
             </div>
-        </div>   
-    </nav>
-    <div class="row row-space">
-        <div class="col-sm-8 col-sm-offset-2 border-top">
-            &nbsp;
         </div>
-    </div>
-    <div class="row">
-      {{ content }}
+        <div class="row">
+          {{ content }}
+        </div>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -78,5 +77,9 @@
       ga('create', 'UA-3319562-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/application.js"></script>
+
 </body>
 </html>
