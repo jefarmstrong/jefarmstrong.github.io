@@ -40,7 +40,7 @@ categories: code
 <div class="row" style="margin-top:20px;">
     <div class="col-sm-12">
         <img class="img-responsive" src="/images/mondrian2/mondrian_maker_1.png"/>
-        Here is a screen shot of the AngularJS app I built to design and solve the puzzles.
+        Here is a screen shot of the AngularJS app I built to design and solve the puzzles. Using the palette on the left you can design the puzzle starting position and the goal position. When you click 'Solve it' the board layouts are sent the the server and the A* algorithm starts attempting to solve it. The client then pings the server for updates. 
     </div>
 </div>            
 <div class="row" style="margin-top:20px;">
@@ -48,7 +48,7 @@ categories: code
         <p>
             Here's the core loop that runs on the server. (Node.js)
         </p>
-        <div class="highlight highlight-javascript">
+        <div>
         <pre>       
         var nextState = this.openStates.shift();
         var state = this.closedSet[nextState.hash];
@@ -56,7 +56,6 @@ categories: code
             return;
         }
         if (state.moveCount() !== nextState.moveCount) {
-            console.warn('closedSet state was replaced: ' + state.moveCount() + '  => ' + nextState.moveCount);
             return;
         }
         var _this = this;
@@ -84,6 +83,23 @@ categories: code
         });
         </pre>
         </div>
-        
+
+    </div>
+</div>            
+<div class="row" style="margin-top:20px;">
+    <div class="col-sm-12">
+        <img class="img-responsive" src="/images/mondrian2/mondrian_maker_2.png"/>
+        <p>
+            Here the solver is running. It's looked at over 75 thousand board states and has over 61 thousand in the priority queue. At this point it's already found 3 solutions with 29 moves being the best so far. 
+        </p>
+        <p>
+            But wait, you say, did I say that with a good heuristic you will find the best solution first? Well, yes, this points out an issue with the heuristic score. Given the nature of these puzzles and the very large search spaces we are dealing with there are some moves that don't appear to be good moves initially, but which turn out to be good later. For example, in the puzzle shown I'll give you a hint. The best first move that I have found is to move the top yellow tile to the left. But when the heuristic scoring algorithm looks at that resulting board state it doesn't score that particularly well because you are moving a tile from it's goal position.  
+        </p>
+        <p>
+            So here's what happens to that first "best" move. It gets scored low compared to one or more other moves in that first set of six moves. In the next iteration of the loop one of the other board states (which scored the best) is pulled off the queue and all the valid moves from that state are generated (with 6 moveable tiles the maximum moves for each state is 24, but that never happens since each tile usually can't move in all four directions). For this puzzle in particular we average about 13.5 moves per state. So, as you can see very quickly that initial poorly scoring move gets pushed farther and farther down in the priority queue. 
+        </p>
+        <p>            
+            We can balance that somewhat by also applying a move count penalty to the heuristic so that states with a lot of moves score less and less well. 
+        </p>
     </div>
 </div>            
