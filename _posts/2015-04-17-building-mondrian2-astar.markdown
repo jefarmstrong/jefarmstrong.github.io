@@ -101,5 +101,8 @@ categories: code
         <p>            
             We can balance that somewhat by also applying a move count penalty to the heuristic so that states with a lot of moves score less and less well. 
         </p>
+        <h3>Node.js Details</h3>
+        The node app is just an express backend that serves up the AngularJS app, and a controller that handles kicking off the A* program. 
+        The A* code is forked from the main server and communication is handled via messages. Also, each loop of the core algorithm is run once and the kicked off again with a call to setImmediate() to keep the thread from locking up.
     </div>
 </div>            
