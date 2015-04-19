@@ -111,14 +111,55 @@ categories: code
         <p>
             Here the solver is running. It's looked at over 75 thousand board states and has over 61 thousand in the priority queue. At this point it's already found 3 solutions with 29 moves being the best so far. 
         </p>
+        <h3>The Heuristic</h3>
         <p>
-            But wait, you say, did I say that with a good heuristic you will find the best solution first? Well, yes, this points out an issue with the heuristic score. Given the nature of these puzzles and the very large search spaces we are dealing with there are some moves that don't appear to be good moves initially, but which turn out to be good later. For example, in the puzzle shown I'll give you a hint. The best first move that I have found is to move the top yellow tile to the left. But when the heuristic scoring algorithm looks at that resulting board state it doesn't score that particularly well because you are moving a tile from it's goal position.  
+            But wait, you say, did I say that with a good heuristic you will find the best solution first? Well, yes, this points out an issue with the heuristic score. Given the nature of these puzzles and the very large search spaces we are dealing with there are some moves that don't appear to be good moves initially, but which turn out to be good later. For example, in the puzzle shown above I'll give you a hint. The best first move that I have found is to move the top yellow tile to the left. But when the heuristic scoring algorithm looks at that resulting board state it doesn't score that particularly well because you are moving a tile from it's goal position.  
         </p>
+        <p>Here's the heuristic scoring code. It goes through all the tiles in the goal and finds matching colored titles in the current board state. The lowest score found is used for that tile. If the resulting score in more than zero (the solution) then we also give a penalty for the number of moves.</p>
+<pre>       
+evaluatePosition: function(puzzleState, options) {
+    options = options || {};
+    var score = 0;
+    puzzleState.outOfPosition = 0;
+    var _this = this;
+    _.forEach(this.goalState, function(goalObj) {
+        if (isGameObject(goalObj)) {
+            var matching = puzzleState.objectsMatchingColor(goalObj.color);
+            var scr = Number.MAX_VALUE;
+            _.forEach(matching, function(obj2) {
+                var dist = _this.distance(goalObj, obj2);
+                scr = Math.min(scr, dist);
+            });
+            score += scr;
+            if (scr) puzzleState.outOfPosition++;
+        }
+    });
+    var penalty = puzzleState.moveCount() * this.movePenalty;
+    if (score > 0) score += penalty;
+    puzzleState.score = score;
+    return score;
+}
+</pre>
+<p>I've tried different algorithms for the distance function but the standard Euclidean distance seems to work fine.</p>
+<pre>
+distance: function(obj1, obj2) {
+    var p1 = rowColForIndex(obj1.index);
+    var p2 = rowColForIndex(obj2.index);
+    return Math.sqrt( Math.pow(p1.row-p2.row, 2) + Math.pow(p1.col-p2.col, 2) );
+}    
+</pre>
+
         <p>
-            So here's what happens to that first "best" move. It gets scored low compared to one or more other moves in that first set of six moves. In the next iteration of the loop one of the other board states (which scored the best) is pulled off the queue and all the valid moves from that state are generated (with 6 moveable tiles the maximum moves for each state is 24, but that never happens since each tile usually can't move in all four directions). For this puzzle in particular we average about 13.5 moves per state. So, as you can see very quickly that initial poorly scoring move gets pushed farther and farther down in the priority queue. 
+            So here's what happens to that first "best" move. It gets scored low compared to one or more other moves in that first set of six moves. In the next iteration of the loop one of the other board states (which scored the best) is pulled off the queue and all the valid moves from that state are generated (with 6 moveable tiles the maximum moves for each state is 24, but that never happens since each tile usually can't move in all four directions). For this puzzle in particular we average about 13.5 moves per state. So, as you can see very quickly that initial poorly scoring move gets pushed farther and farther down in the priority queue. With the penalty for moves the initial poorly scoring state will end up at the top of the priority, but sometimes it can take a long time.
         </p>
+        <h3>Future Directions</h3>
         <p>            
-            We can balance that somewhat by also applying a move count penalty to the heuristic so that states with a lot of moves score less and less well. 
+            Some things that I have tried to overcome the "lost" counter-intuitive moves: 
+            <ul>
+                <li>Perform short brute force searches from a given position to see if a better scoring position arises. This didn't help that much since often the benefit of a counter-intuative move doesn't become apparent till much later.</li>
+                <li>Creating a "heat-map" of good positions on any given puzzle board. These would obviously by the goal positions, but also positions that help other tiles get into those goal positions. This seems like a promising idea, but so far it hasn't garnered much.</li>
+                <li>Manually help the algorithm by providing some initial moves or by starting the puzzle at manually created waypoints. This approach has worked on several puzzles but the issue is always if the manual overrides are creating a local maximum.</li>                
+            </ul>
         </p>
         <h3>Node.js Details</h3>
         The node app is just an express backend that serves up the AngularJS app, and a controller that handles kicking off the A* program. 
