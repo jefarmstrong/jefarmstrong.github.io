@@ -7,6 +7,10 @@ categories: code
 <div class="row">
     <div class="col-sm-12">
         <p>
+            <a href="/posts/building-mondrian-2-intro/">First post, if you missed it</a>
+        </p>
+        <h3>Solving Puzzles with A*</h3>
+        <p>
             There are many algorithms used to solve path finding problems. One of the most popular is the A* (pronounced A star) algorithm. It's really very simple, yet can yield some intelligent looking results.
         </p>
         <p>
@@ -46,16 +50,13 @@ categories: code
 <div class="row" style="margin-top:20px;">
     <div class="col-sm-12">
         <p>
-            Here's the core loop that runs on the server. (Node.js)
+            Here's the core A* loop that runs on the server. (Node.js)
         </p>
         <div>
         <pre>       
         var nextState = this.openStates.shift();
         var state = this.closedSet[nextState.hash];
         if (this.isOverMoveCount(state)) {
-            return;
-        }
-        if (state.moveCount() !== nextState.moveCount) {
             return;
         }
         var _this = this;
@@ -83,9 +84,27 @@ categories: code
         });
         </pre>
         </div>
-
+        <ol>
+            <li>The this.openStates is a sorted array with the lowest scoring state first (the heuristic gives a score of zero when the state matches the goal). </li>
+            <li>We get the actual state out of the closedSet object.</li>
+            <li>If we have already found at least one solution we throw out any states that are over that move count.</li>
+            <li>Then we get all the movable tiles and generate all the valid moves for each.</li>
+            <li>By applying the move we generate a new board state, which we save into the closed set.</li>
+            <li>Then we score that state and if it scores a zero, we found a solution, otherwise we insert it in the correct position (based on it's score) into the openStates array.</li>
+            <li>We repeat this until there are no more states in openStates. This can take a very long time on boards with many tiles and lots of moves, so often I'll just stop it once it's run for close to a million iterations.</li>
+        </ol>
     </div>
 </div>            
+<div class="row">
+    <div class="col-sm-6">
+        <h3>Example Solution</h3>
+        <p>Here's an example of a simpler puzzle that the A* algorithm found a solution for in 17 moves. I left it running and it eventually found a better solution in 15 moves. As you can see, this simple algorithm can produce some intelligent looking solutions.</p>
+    </div>
+    <div class="col-sm-6">
+        <img src="/images/mondrian2/solution2.gif" class="img-responsive"/>
+    </div>
+</div>
+
 <div class="row" style="margin-top:20px;">
     <div class="col-sm-12">
         <img class="img-responsive" src="/images/mondrian2/mondrian_maker_2.png"/>
