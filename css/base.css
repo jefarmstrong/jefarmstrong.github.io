@@ -5,9 +5,11 @@ body {
     font-size: 16px;
     /*-webkit-font-smoothing: antialiased; */
 }
-
+.navbar-static-top {
+    background-color: #DADFE1;
+}
 .navbar-default {
-    background-color: #fff;  /* #4B77BE; */
+    background-color: #DADFE1;  
     border-color:#fff;
     color:#000;
     height:75px;
