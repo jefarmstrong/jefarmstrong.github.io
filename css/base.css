@@ -62,3 +62,8 @@ img.thumb-left {
     margin-top:25px;
     padding-top:50px;
 }
+
+.jumbotron h1, .jumbotron h1 small {
+    color:#fff;
+    text-shadow:2px 2px 2px black;
+}
