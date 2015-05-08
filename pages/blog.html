@@ -1,15 +1,14 @@
 ---
-layout: layout
+layout: pageLayout
 title: "Blog"
 ---
 
-<div class="col col-sm-8 col-sm-offset-2">
-    <h2>Blog</h2>
-    <!-- <ul class="listing"> -->
-    {% for post in site.posts %}
-    <div>
-        <h3><a href="{{post.url}}">{{post.title}}</a></h3>
-        <h2 style="margin-top:0px;"><small>{{post.teaser}}</small></h2>
-    </div>
-    {% endfor %}
+<h2>Blog</h2>
+<!-- <ul class="listing"> -->
+{% for post in site.posts %}
+<div style="margin-bottom:20px;">
+    <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+    <em><small>{{ post.date | date: "%-d %B %Y"}}</small></em><br/>
+    {{post.excerpt}}
 </div>
+{% endfor %}

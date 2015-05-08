@@ -1,98 +1,93 @@
 ---
-layout: layout
+layout: pageLayout
 title: "Portfolio"
 ---
 
-<div class="col col-sm-8 col-sm-offset-2">
-    <h1>Portfolio</h1>
-    
-    <a name="mondrian"></a>
-    <div class="row">
-        <div class="col-sm-6">
-            <img class="img-thumbnail" src="/images/portfolio-mondrian-comment.png"/>
-            <img class="img-thumbnail" src="/images/portfolio-mondrian-puzzle.jpeg"/>
-        </div>
-        <div class="col-sm-6">
-            <h1>Mondrian</h1>
-            Mondrian is a puzzle game based on the art of Piet Mondrian. I developed the puzzles myself and wrote a backend server to find optimal solutions using the A* algorithm. The game is known to be very difficult to solve and also includes a "mondrian" character who berates you when you fail to complete a puzzle.
-            <br/><br/>
-            <b>Here are some reviews:</b>
-            <br/><br/>
-            <b>"A work of Art"</b><br/>
-            "...its character, art style, and terrific gameplay justify the price. Mondrain can rest in peace knowing that his iDevice game has been transformed into a 5-Dimple work of art."
-            -- AppSmile.com
-            <br/><br/>
-            "This is one title not to be missed by puzzle fans, and is engaging enough for anyone to enjoy."
-            -- AppSpy.com
-            <br/><br/>
-            <b>✭✭✭✭ 4 stars</b><br/>
-            "Mondrian is a great game injecting loads of personality, and style into a genre that usually is just associated with blue blocks."
-            -- TouchGen.net
-            <br/><br/>
-            "...a challenging and visually pleasing puzzler brought to you by Piet Mondrian...anyone who downloads the game is in for quite a few hours of brain-tingling puzzles."
-            -- Touch Arcade
-            <br/><br/>
-            "...very simple but deep, interesting, artistic puzzle game. So cool."
-            -- theslick.net (Japan)
-        </div>
+<h1>Portfolio</h1>
+
+<a name="mondrian"></a>
+<div class="row">
+    <div class="col-sm-6">
+        <img class="img-thumbnail" src="/images/portfolio-mondrian-comment.png"/>
+        <img class="img-thumbnail" src="/images/portfolio-mondrian-puzzle.jpeg"/>
     </div>
-
-    <a name="cuenotes"></a>
-    <div class="row row-space">
-        <div class="col-sm-6">
-            <img class="img-thumbnail" src="/images/portfolio-cuenotes-feed.png"/>
-            <img class="img-thumbnail" src="/images/portfolio-cuenotes-song.png"/>
-        </div>
-        <div class="col-sm-6">
-            <h1>CueNotes</h1>
-            Cuenotes was a cool music app. It has been described as "Twitter for music." While listening to a song you can write a short twitter-sized comment that is then connected to that song, at that time. Anyone who is following you will see your message when they listen to the same song. 
-            <br/><br/>
-            I wrote the app in native Objective-C and integrated with the iTunes player, and Spotify for music. 
-            <br/><br/>
-            I wrote the backend in Node.js and MongoDB. The backend was fairly complicated as it had to connect to several third-party sources (iTunes, spotify, echonest, etc) and try to fuzzy match songs. 
-        </div>
+    <div class="col-sm-6">
+        <h1>Mondrian</h1>
+        Mondrian is a puzzle game based on the art of Piet Mondrian. I developed the puzzles myself and wrote a backend server to find optimal solutions using the A* algorithm. The game is known to be very difficult to solve and also includes a "mondrian" character who berates you when you fail to complete a puzzle.
+        <br/><br/>
+        <b>Here are some reviews:</b>
+        <br/><br/>
+        <b>"A work of Art"</b><br/>
+        "...its character, art style, and terrific gameplay justify the price. Mondrain can rest in peace knowing that his iDevice game has been transformed into a 5-Dimple work of art."
+        -- AppSmile.com
+        <br/><br/>
+        "This is one title not to be missed by puzzle fans, and is engaging enough for anyone to enjoy."
+        -- AppSpy.com
+        <br/><br/>
+        <b>✭✭✭✭ 4 stars</b><br/>
+        "Mondrian is a great game injecting loads of personality, and style into a genre that usually is just associated with blue blocks."
+        -- TouchGen.net
+        <br/><br/>
+        "...a challenging and visually pleasing puzzler brought to you by Piet Mondrian...anyone who downloads the game is in for quite a few hours of brain-tingling puzzles."
+        -- Touch Arcade
+        <br/><br/>
+        "...very simple but deep, interesting, artistic puzzle game. So cool."
+        -- theslick.net (Japan)
     </div>
+</div>
 
-    <a name="syde"></a>
-    <div class="row row-space">
-        <div class="col-sm-6">
-            <img class="img-thumbnail" src="/images/portfolio-syde-image1.jpeg"/>
-        </div>
-        <div class="col-sm-6">
-            <h1>Syde</h1>
-            Syde is a social photo sharing app with a twist. Users only take one side of a photo and then other users can complete the photo by taking the other side. It's a fun app that can yield some surprising and beautiful results. 
-            <br/><br/>
-            The app is native Objective-C, utilizing the camera, obviously. I also wrote a nice cropping/adjusting screen to help users line up their photos. 
-            <br/><br/>
-            The backend server is written in Node.js with MongoDB. 
-
-        </div>
+<a name="cuenotes"></a>
+<div class="row row-space">
+    <div class="col-sm-6">
+        <img class="img-thumbnail" src="/images/portfolio-cuenotes-feed.png"/>
+        <img class="img-thumbnail" src="/images/portfolio-cuenotes-song.png"/>
     </div>
-
-    <a name="qu"></a>
-    <div class="row row-space">
-        <div class="col-sm-6">
-            <video id="qu-video" src="/images/portfolio-qu.m4v" controls/>
-        </div>
-        <div class="col-sm-6">
-            <h1>Qu</h1>
-            I recently added some features to the polling app <b>Qu</b>. I added some nice animations using the <a href="https://github.com/facebook/pop">Facebook Pop</a> library as well as several other quick fixes.
-        </div>
+    <div class="col-sm-6">
+        <h1>CueNotes</h1>
+        Cuenotes was a cool music app. It has been described as "Twitter for music." While listening to a song you can write a short twitter-sized comment that is then connected to that song, at that time. Anyone who is following you will see your message when they listen to the same song. 
+        <br/><br/>
+        I wrote the app in native Objective-C and integrated with the iTunes player, and Spotify for music. 
+        <br/><br/>
+        I wrote the backend in Node.js and MongoDB. The backend was fairly complicated as it had to connect to several third-party sources (iTunes, spotify, echonest, etc) and try to fuzzy match songs. 
     </div>
+</div>
 
-    <a name="tapnastics"></a>
-    <div class="row row-space">
-        <div class="col-sm-6">
-            <img class="img-thumbnail" src="/images/portfolio-tapnastics-beats.jpeg"/>
-            <img class="img-thumbnail" src="/images/portfolio-tapnastics-play.jpeg"/>
-        </div>
-        <div class="col-sm-6">
-            <h1>Tapnastics</h1>
-            Tapnastics is a music/rhythm game based on famous drum beats throughout history. 
-            
-        </div>
+<a name="syde"></a>
+<div class="row row-space">
+    <div class="col-sm-6">
+        <img class="img-thumbnail" src="/images/portfolio-syde-image1.jpeg"/>
     </div>
+    <div class="col-sm-6">
+        <h1>Syde</h1>
+        Syde is a social photo sharing app with a twist. Users only take one side of a photo and then other users can complete the photo by taking the other side. It's a fun app that can yield some surprising and beautiful results. 
+        <br/><br/>
+        The app is native Objective-C, utilizing the camera, obviously. I also wrote a nice cropping/adjusting screen to help users line up their photos. 
+        <br/><br/>
+        The backend server is written in Node.js with MongoDB. 
 
+    </div>
+</div>
 
+<a name="qu"></a>
+<div class="row row-space">
+    <div class="col-sm-6">
+        <video id="qu-video" src="/images/portfolio-qu.m4v" controls/>
+    </div>
+    <div class="col-sm-6">
+        <h1>Qu</h1>
+        I recently added some features to the polling app <b>Qu</b>. I added some nice animations using the <a href="https://github.com/facebook/pop">Facebook Pop</a> library as well as several other quick fixes.
+    </div>
+</div>
 
+<a name="tapnastics"></a>
+<div class="row row-space">
+    <div class="col-sm-6">
+        <img class="img-thumbnail" src="/images/portfolio-tapnastics-beats.jpeg"/>
+        <img class="img-thumbnail" src="/images/portfolio-tapnastics-play.jpeg"/>
+    </div>
+    <div class="col-sm-6">
+        <h1>Tapnastics</h1>
+        Tapnastics is a music/rhythm game based on famous drum beats throughout history. 
+        
+    </div>
 </div>

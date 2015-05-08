@@ -3,6 +3,7 @@ layout: post
 title:  "Building Mondrian2 - A* (A star)"
 date:   2015-04-17
 categories: code 
+excerpt: Showing how I use the A* algorithm to solve Mondrian puzzles.
 ---
 <div class="row">
     <div class="col-sm-12">
@@ -27,7 +28,7 @@ categories: code
         <img class="img-responsive" src="/images/mondrian2/puzzle_end.png"/>
         This is the goal of this puzzle. It can be reached in 22 moves.
     </div>
-</div>            
+</div>    
 <div class="row" style="margin-top:20px;">
     <div class="col-sm-12">
         <p>

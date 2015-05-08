@@ -2,7 +2,7 @@ highlighter: pygments
 #pygments: true
 #markdown: kramdown
 permalink: /posts/:title
-
+#excerpt_separator: <!--more-->
 name: Jef Armstrong
 url: http://jefarmstrong.com
 avatar_url: /images/buddy_me.jpeg
